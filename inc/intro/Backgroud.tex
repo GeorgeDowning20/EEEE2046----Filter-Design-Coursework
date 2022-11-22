@@ -1,0 +1,19 @@
+% The band-pass filter design you have used in your hardware design is a simple design and does not
+% have very good performance (as you have hopefully already noticed!). It is usually straightforward
+% to produce a filter with a given -3 dB cut-off point, but this is not the only parameter that you need
+% to consider when designing a filter.
+% Figure 1 shows the low frequency amplitude response for a filter similar in design to yours. The
+% rate at which the signal is attenuated (called the roll off) beneath the -3 dB cutoff (indicated by the
+% dark grey lines) is 20 dB/decade; in other words when the frequency is reduced by a factor of 10,
+% the attenuation increases by 20 dB. This is because the design is a first order filter.
+% There are two things that are inadequate about this filter response:
+% 1. There is still a reasonable amount of attenuation occurring in the range of frequencies
+% we are interested in – the amplitude response in our pass band is not very flat. Only
+% in the region of around 250 Hz to 400 Hz is there substantially lower than 1 dB
+% attenuation.
+% 2. Because the filter has a slow roll off, signals at low frequencies can still make a
+% noticeable contribution to our result. At 10 Hz in this example, the input has been
+% attenuated by 18 dB, or 0.126 of the original signal level. In the context of the Doppler
+% radar design, people walking nearby or small movements caused by holding the radar
+% unit could potentially interfere with our current filter design.
+% Figure 1 - Simple BPF Amplitude Response

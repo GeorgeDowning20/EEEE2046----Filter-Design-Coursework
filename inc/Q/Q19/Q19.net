@@ -1,0 +1,16 @@
+* Z:\home\g\Uni code\Electronic Processing and Communications (EEEE2044 UNUK)\EEEE2044 Coursework 1 - Digital Electronics\inc\Q\Q19\Q19.asc
+A N001 0 CLK 0 0 0 N002 0 DFLOP Td=40n
+A§B N006 0 CLK 0 0 0 N004 0 DFLOP Td=40n
+A§C N008 0 CLK 0 0 N010 N005 0 DFLOP Td=40n
+V§CLK CLK 0 PULSE(0 1 0.5m 1n 1n 0.5m 1m 1000)
+V§X X 0 PWL file="Z:\home\g\Uni code\Electronic Processing and Communications (EEEE2044 UNUK)\EEEE2044 Coursework 1 - Digital Electronics\inc\Q\Q18\mytestpwl.txt"
+A2 0 N003 N004 N005 0 0 N001 0 AND Td=27n
+A3 0 N004 0 N005 0 0 N007 0 XOR Td=22n
+A4 0 N007 0 N003 0 0 N006 0 AND Td=40n
+A5 0 N004 0 N010 0 0 N009 0 AND Td=27n
+A7 0 N009 0 X 0 0 N008 0 OR Td=22n
+A8 0 N002 0 X 0 0 Z 0 AND Td=22n
+A1 X 0 0 0 0 N003 0 0 BUF Td=20n
+.tran 25m
+.backanno
+.end

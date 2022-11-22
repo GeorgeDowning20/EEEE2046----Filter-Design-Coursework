@@ -1,0 +1,20 @@
+\begin{tikzpicture}[circuit ee IEC, scale=0.6666666667,line width=.5pt]% default: 0.4
+
+\draw [/lt2ti/Net](7.0,-1.5)to[*short,-, color=netcolor] (7.0,-1.5);% wire w3_w6 start
+\draw [/lt2ti/Net](5.0,-5.0)to[*short,-*, color=netcolor] (5.0,-5.0);% wire w3_w6 end
+\draw [/lt2ti/Net](7.0,-1.5) --  (5.0,-1.5) -- (5.0,-5.0); % wire w3_w6 polyline 
+\draw [/lt2ti/Net](10.5,-1.5)to[*short,-, color=netcolor] (9.5,-1.5);% wire w4
+\draw [/lt2ti/Net](0.5,-5.0)to[*short,-, color=netcolor] (-2.0,-5.0);% wire w5
+\draw [/lt2ti/Net](5.0,-5.0)to[*short,*-, color=netcolor] (3.0,-5.0);% wire w7
+\draw [/lt2ti/Net](6.0,-5.0)to[*short,-*, color=netcolor] (5.0,-5.0);% wire w8
+\draw [/lt2ti/Net](10.5,-5.5)to[*short,-, color=netcolor] (8.0,-5.5);% wire w9
+\draw [/lt2ti/Net](6.0,-6.0)to[*short,-, color=netcolor] (6.0,-6.0);% wire w10_w11 start
+\draw [/lt2ti/Net](5.0,-8.5)to[*short,-, color=netcolor] (5.0,-8.5);% wire w10_w11 end
+\draw [/lt2ti/Net](6.0,-6.0) --  (5.0,-6.0) -- (5.0,-8.5); % wire w10_w11 polyline 
+ \draw (5.0, -8.5) node[ground, xscale=1, yscale=1, rotate=0-90, ] (undefined) {};%  (undefined)++(0.0,0.0) node {undefined }; % component "circuiTikz\ground" "undefined" 
+  \draw (3.0, -5.0) to[*resistor, l^=R1, a_=R24, -, ] (0.5,-5.0){}; %\node [] at (3.5,-4.5) {x}; % component "res" "R1" 
+  \draw (9.5, -1.5) to[*resistor, l^=R2, a_=, -, ] (7.0,-1.5){}; %\node [] at (10.0,-1.0) {x}; % component "res" "R2" 
+ \draw (7.0, -5.5) node[op amp, xscale=1, rotate=0, ] (U1) {}  (U1)++(1*0.75,  1*1.25) node {U1 }; % component "Opamps\\opamp" "U1" 
+ \draw (6.0,-6.0) to [*short, -] (U1.+);   \draw (6.0,-5.0) to [*short, -] (U1.-); \draw (8.0,-5.5) to [*short, -] (U1.out); % in/out % component "Opamps\\opamp" "U1" 
+
+\end{tikzpicture}
